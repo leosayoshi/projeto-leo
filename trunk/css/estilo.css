@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+body {
+	font-family: arial;
+        color: rgba (0,0,0,1);
+}
+
+#interface {
+    background-color: #ffffff;
+    margin: -20px auto 0px auto;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+    padding: 10px 10px 10px 10px;
+}
+
+#conteudo {
+    height: 600px;
+    background: url('../imagens/doctor-photo.jpg') ;
+    background-size: 100% 100%;
+    box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+    margin-top: -80px;
+}
+
+#conteudo h4 {
+    text-align: center;
+    font-size: 50pt;
+    font-family: ubuntu;
+}
+
+label, input[type=submit] {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+table {
+    width: 70%;
+}
+tr.title {
+    background: #efefef;
+}
+p.message {
+    color: green;
+}
+
+ label {
+        display: block;
+        font-weight: bold;
+        margin-top: 10px;
+ }
+ 
+/* menu */ 
+
+nav#menu {
+        height: 40px;   
+        font-weight: bold;
+        font-size: 1.2em;
+        background: #FF0033;
+        padding: 1%;
+}
+
+
+  nav#menu li a {
+	text-decoration: none;
+	color: white;
+}
+
+  nav#menu li a:hover {
+        color: silver;
+	-moz-box-shadow:0 10px 10px 0 silver;
+        -webkit-box-shadow:0 10px 10px 0 silver;
+        text-shadow:0px 0px 5px silver;
+  }
+  
+  nav#menu li {
+	display: inline-block;
+	margin-right: 3%;
+        display: inline-block;
+        background-color: #FF0033;
+        transition: background-color 1s;
+  }
+  
+    nav#menu li ul {
+		position: absolute;
+		background: black;
+		padding: 1%;
+		display: none;
+	}
+	
+	nav#menu form {
+		position: absolute;
+		background: rgba(255,0,0, 0.5);
+		color: white;
+		padding: 1%;
+		display: none;
+	}
+	
+	nav#menu input {
+		border: 1px solid white;
+	}
+  /***************************************************************/
+  .error {
+	color: red;
+  }
+  
+  #manterLogado  {
+	font-size: .8em;
+  }
+  
+  #manterLogado input {
+	float: left;
+  }
+  
+  input {
+	border: 1px solid black;
+  }
+  
+  .ui-button {
+	font-size: .8em;
+  }
+  
+form#busca {
+    margin-right: 30%;
+float: right;
+height: 200px;
+width: 280px;
+background: rgba(255,255,255,0.5);
+font: 13pt Verdana, sans-serif;
+border: 2px solid #ffffff;
+box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+  }
+ 
+  form#busca h3 {
+      font: 15pt Verdana, sans-serif;
+      text-align: center;
+  }
+ 
+  form#busca input {
+      border: 1px solid white;
+      box-shadow: 0px 0px 10px rgba(0,0,0,.5);
+  }
+  
+  p.data {
+      float: right;
+ text-align: center;
+ font-family: ubuntu;
+  }
+ 
