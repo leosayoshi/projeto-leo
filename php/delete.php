@@ -13,7 +13,7 @@ if (isset($_GET['idpessoa']) && ($idpessoa = $_GET['idpessoa'])) {
         $result = mysql_query($sql, $dataBase);
 
         if ($result) {
-            header('Location: index.php?message=1');
+            header('Location: ../index.php?message=1');
             exit;
         }
     }
