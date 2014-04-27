@@ -1,21 +1,20 @@
-	<?php
-	session_start();
-	include 'php/connection.php';
-	include 'php/function.php';
-	?>
-	<!DOCTYPE html>
-	<html lang="pt-br">
-		<head>
-			<title>Meu primeiro site</title>
-<link rel="stylesheet" type="text/css" href="css/trontastic/jquery-ui-1.10.4.custom.min.css">
-			<link rel="stylesheet" type="text/css" href="css/estilo.css">
- <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<?php
+session_start();
+include 'php/connection.php';
+include 'php/function.php';
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Busca Medica Rio</title>
+        <link rel="stylesheet" type="text/css" href="css/trontastic/jquery-ui-1.10.4.custom.min.css">
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
-			<script type="text/javascript" src="js/main.js"></script>
-		</head>
-		   <body>
-	<div id="interface">
-            <nav id="menu">
+        <script type="text/javascript" src="js/main.js"></script>
+    </head>
+    <body>
+	<nav id="menu">
 		<ul>
 			<li>
 				<a href="index.php">Home</a>
@@ -32,7 +31,7 @@
 			
 			<?php if (taLogado()): ?>
 			<li>
-				<a href="#" title="Opções do usuário" class="submenu"><?php echo $_SESSION['email'] ?></a>
+				<a href="#" title="Opcoes do usuario" class="submenu"><?php echo $_SESSION['email'] ?></a>
 				<ul>
 					<li>
 						<a href="php/logout.php" title="Logar no site">Sair</a>
@@ -57,11 +56,13 @@
 					<input type="submit" value="Login" />
 				</form>
 			</li>
+                        <li>
+				<a href="index.php?pagina=cadastro">Cadastre-se</a>
+			</li>
 			<?php endif; ?>
 		</ul>
-                </nav>
-            
-            <div id="conteudo">
+        </nav>
+        <div id="interface">
     <?php 
 	
 	if (isset($_GET['pagina'])) {
@@ -84,6 +85,8 @@
 		include 'php/home.php'; 
 	?>    
             </div>
-        </div>
     </body>
 </html>
+
+
+
