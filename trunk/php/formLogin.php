@@ -1,4 +1,4 @@
-<h4>Autenticação</h4>
+<h4>Autenticacao</h4>
 
 <?php
 if (isset($_GET['message'])) {
@@ -7,7 +7,7 @@ if (isset($_GET['message'])) {
             echo '<p class="error">Todos os campos devem ser preenchidos!</p>';
             break;
 		case 2:
-            echo '<p class="error">E-mail e/ou senha inválidos!</p>';
+            echo '<p class="error">E-mail e/ou senha invalidos!</p>';
             break;
     }
 }
@@ -15,10 +15,10 @@ if (isset($_GET['message'])) {
 
 <form action="php/login.php" method="post">
     <label for="email">E-mail</label>
-    <input type="text" name="email" />
+    <input type="email" name="email" id="email" />
 
     <label for="senha">Senha</label>
-    <input type="password" name="senha" />
+    <input type="password" name="senha" id="senha" />
 	
 	<div id="manterLogado">
 		<input type="checkbox" name="manterLogado" id="manterLogado" value="1" />

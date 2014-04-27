@@ -3,38 +3,26 @@
 include 'connection.php';
 
 $nome = isset($_POST['nome']) && $_POST['nome'] ? trim($_POST['nome']) : null;
-$sexo = isset($_POST['sexo']) && $_POST['sexo'] ? trim($_POST['sexo']) : null;
-$cpf = isset($_POST['cpf']) && $_POST['cpf'] ? trim($_POST['cpf']) : null;
 $email = isset($_POST['email']) && $_POST['email'] ? trim($_POST['email']) : null;
-$descricao = ($_POST['descricao']);
-$ativo = ($_POST['ativo']);
+$celular = isset($_POST['celular']) && $_POST['celular'] ? trim($_POST['celular']) : null;
 
-if ($nome && $sexo && $cpf && $email) {
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if ($nome && $email && $celular) {
+    $sql = (isset($_GET['idpessoa']) && ($idpessoa = $_GET['idpessoa'])) 
+            ? "UPDATE pessoa SET nome='$nome', email='$email', celular='$celular' WHERE idpessoa = $idpessoa" 
+            : "INSERT INTO pessoa (nome, email, celular) VALUES ('$nome', '$email', '$celular')";
 
-        $valido = validaCPF($cpf);
-        if ($valido) {
-            $sql = (isset($_GET['idpessoa']) && ($idpessoa = $_GET['idpessoa'])) ? "UPDATE pessoa SET nome='$nome', sexo='$sexo', cpf='$cpf', email='$email', descricao='$descricao', ativo='$ativo' WHERE idpessoa = $idpessoa" : "INSERT INTO pessoa (nome, sexo, cpf, email, descricao, ativo) VALUES ('$nome', '$sexo', '$cpf', '$email', '$descricao', '$ativo')";
+    $result = mysql_query($sql, $dataBase);
 
-            $result = mysql_query($sql, $dataBase);
-
-            if ($result) {
-                header('Location: ../index.php?message=4');
-                exit;
-            } else {
-                header('Location: ../index.php?pagina=form&message=2');
-                exit;
-            }
-        } else {
-            header('Location: ../index.php?pagina=form&message=3');
-            exit;
-        }
-    }else{
-         header('Location: ../index.php?pagina=form&message=4');
-         exit;
+    if ($result) {
+        header('Location: ../index.php?pagina=form&message=3');
+        exit; 
+    } else {
+        header('Location: ../index.php?pagina=form&message=2');
+        exit;
     }
 } else {
     header('Location: ../index.php?pagina=form&message=1');
     exit;
 }
+
 ?>
