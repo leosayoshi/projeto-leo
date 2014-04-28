@@ -24,9 +24,7 @@ include 'php/function.php';
 			<li>
 				<a href="index.php?pagina=lista" title="Pessoas cadastradas">Pessoas cadastradas</a>
 			</li>
-			<li>
-				<a href="index.php?pagina=form" title="Nova pessoa">Nova pessoa</a>
-			</li>
+			
 			<?php endif; ?>
 			
 			<?php if (taLogado()): ?>
@@ -57,7 +55,7 @@ include 'php/function.php';
 				</form>
 			</li>
                         <li>
-				<a href="index.php?pagina=cadastro">Cadastre-se</a>
+				<a href="index.php?pagina=form">Cadastre-se</a>
 			</li>
 			<?php endif; ?>
 		</ul>
@@ -68,7 +66,6 @@ include 'php/function.php';
 	if (isset($_GET['pagina'])) {
 		if (file_exists('php/' . $_GET['pagina'] . '.php')) {
 			switch ($_GET['pagina']) {
-				case 'form':
 				case 'lista':
 					if (taLogado())
 						include 'php/' . $_GET['pagina'] . '.php';
