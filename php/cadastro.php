@@ -3,13 +3,13 @@
 if (isset($_GET['message'])) {
     switch ($_GET['message']) {
         case 1:
-            echo '<p>Todos os campos devem ser preenchidos!</p>';
+            echo '<div id="cadastro01"><p>Todos os campos devem ser preenchidos!</p></div>';
             break;
         case 2:
-            echo '<p>Ocorreu um problema ao salvar os dados. Por favor, tente novamente.</p>';
+            echo '<div id="cadastro01"><p>Ocorreu um problema ao salvar os dados. Por favor, tente novamente.</p></div>';
             break;
         case 3:
-            echo '<p>salvo.</p>';
+            echo '<div id="cadastro01"><p>salvo.</p></div>';
             break;
     }
 }
