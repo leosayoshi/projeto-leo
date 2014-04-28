@@ -19,12 +19,14 @@ if (isset($_GET['message'])) {
 
 <div id="cadastro01">
     <form id="cadastro" class="cadastro" action="php/processCadastro.php" method="post">
+        <!--
         <fieldset id="cad01">
             <legend>Cadastro</legend>
         <fieldset id="situacao"><legend>Situacao</legend>
   <input type="radio" name="situacao" value="p">Paciente
   <input type="radio" name="situacao" value="s">Servico
-        </fieldset>
+        </fieldset
+        -->
     <label for="nome">Nome</label>
     <input type="text" name="nome" id="nome" size="30" placeholder="Digite seu nome" />
     
