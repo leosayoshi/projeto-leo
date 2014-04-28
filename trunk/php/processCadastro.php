@@ -6,6 +6,15 @@ $nome = isset($_POST['nome']) && $_POST['nome'] ? trim($_POST['nome']) : null;
 $email = isset($_POST['email']) && $_POST['email'] ? trim($_POST['email']) : null;
 $senha = isset($_POST['senha']) && $_POST['senha'] ? trim($_POST['senha']) : null;
 
+$senha = $_POST['senha'];
+ 
+if((strlen($senha)) < 5){
+ 
+//se o texto ultrapassar 1000 caracteres, mostra uma mensagem
+echo 'minimo de 6 caracteres';
+ 
+}
+
 if ($nome && $email && $senha) {
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $senha = md5($_POST['senha']);
