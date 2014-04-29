@@ -18,15 +18,45 @@ if (isset($_GET['message'])) {
 <div id="cadastro01">
 <form id="cadastro" action="php/process.php" class="cadastro" method="post">
     <fieldset> <legend>Novo Cadastro</legend>
+        <fieldset id="situacao"><legend>Situacao</legend>
+  <input type="radio" name="situacao" value="p">Paciente
+  <input type="radio" name="situacao" value="s">Servico
+        </fieldset>
+        <fieldset><legend>Dados Cadastrais</legend>
     <label for="nome">Nome</label>
     <input type="text" name="nome" id="nome" />
-
     <label for="email">E-mail</label>
-    <input type="email" name="email" id="email" />
-
-    <label for="celular">Senha</label>
+    <input type="email" name="email" id="email" />          
+    <label for="senha">Senha</label>
     <input type="password" name="senha" id="senha" maxlength="11" />
+        </fieldset>
+    
+    <fieldset><legend>Endereco</legend>
+    <label for="rua">Rua</label>
+    <input type="text" name="rua" id="rua" />	
+    <label for="Bairro">Bairro</label>
+    <input type="text" name="Bairro" id="Bairro" />	
     </fieldset>
-    <input type="submit" value="Salvar" />
+    
+    <fieldset><legend>Servico</legend>
+         <label for="tipo">Tipo</label> 
+         <select>
+             <option>Hospital</option>
+             <option>Clinica</option>
+             <option>Posto de saude</option>
+             <option>Laboratorio</option>
+         </select>
+         <label for="servico">Servico</label> 
+         <select>
+             <option>Clinico geral</option>
+             <option>Ambulatorio</option>
+             <option>Cardiologia</option>
+             <option>Emergencia</option>
+             <option>Odontologia</option>
+             <option>Pediatria</option>
+         </select>
+    </fieldset>
+            <input type="submit" value="Salvar" />
+    </fieldset>
 </form>
 </div>
