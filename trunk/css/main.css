@@ -104,20 +104,23 @@ p.message {
       box-shadow: 1px 1px 10px rgba(255,0,0,.5);
       height: 600px;
   }
- 
+
+  
   h4.home{
       font-size: 10em;
   }
   
   #cadastro01 {
       background: url('../imagens/medical.jpg');
+      background-attachment:fixed;
       background-size: 100% 100%;
       box-shadow: 1px 1px 10px rgba(255,0,0,.5);
-      height: 600px;
+      height:800px;
   }
 
 form.cadastro {
       float: right;
-      padding-top: 5%;
+      padding-top: 3%;
       padding-right: 10%;
+      width: 400px;
   }
