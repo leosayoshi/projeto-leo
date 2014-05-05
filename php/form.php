@@ -15,13 +15,31 @@ if (isset($_GET['message'])) {
 }
 
 ?>
+      
+        
+
 <div id="cadastro01">
 <form id="cadastro" action="php/process.php" class="cadastro" method="post">
-    <fieldset> <legend>Novo Cadastro</legend>
-        <fieldset id="situacao"><legend>Situacao</legend>
-  <input type="radio" name="situacao" value="p">Paciente
-  <input type="radio" name="situacao" value="s">Servico
+    
+    <fieldset id="situacao"><legend>Eu sou:</legend>
+ <label><input type="radio" name="rd-servico" value="Feminino" />Paciente</label>
+        <label><input type="radio" name="rd-servico" value="Masculino" />Servico</label>
         </fieldset>
+    
+    
+    <div id="tipoForm">
+        
+                <div id="Feminino"> <fieldset> <legend>Novo Cadastro</legend>        
+        <fieldset><legend>Dados Cadastrais</legend>
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" />
+    <label for="email">E-mail</label>
+    <input type="email" name="email" id="email" />          
+    <label for="senha">Senha</label>
+    <input type="password" name="senha" id="senha" maxlength="11" />
+        </fieldset></div>
+        
+                <div id="Masculino"><fieldset> <legend>Novo Cadastro</legend>        
         <fieldset><legend>Dados Cadastrais</legend>
     <label for="nome">Nome</label>
     <input type="text" name="nome" id="nome" />
@@ -55,7 +73,14 @@ if (isset($_GET['message'])) {
              <option>Odontologia</option>
              <option>Pediatria</option>
          </select>
-    </fieldset>
+    </fieldset></div>
+        </div>
+    
+    
+    
+    
+    
+    
             <input type="submit" value="Salvar" />
     </fieldset>
 </form>
