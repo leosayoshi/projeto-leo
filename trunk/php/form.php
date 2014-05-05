@@ -22,14 +22,14 @@ if (isset($_GET['message'])) {
 <form id="cadastro" action="php/process.php" class="cadastro" method="post">
     
     <fieldset id="situacao"><legend>Eu sou:</legend>
- <label><input type="radio" name="rd-servico" value="Feminino" />Paciente</label>
-        <label><input type="radio" name="rd-servico" value="Masculino" />Servico</label>
+ <label><input type="radio" name="rd-servico" value="Paciente" />Paciente</label>
+        <label><input type="radio" name="rd-servico" value="Servico" />Servico</label>
         </fieldset>
     
     
     <div id="tipoForm">
         
-                <div id="Feminino"> <fieldset> <legend>Novo Cadastro</legend>        
+                <div id="Paciente"> <fieldset> <legend>Novo Cadastro</legend>        
         <fieldset><legend>Dados Cadastrais</legend>
     <label for="nome">Nome</label>
     <input type="text" name="nome" id="nome" />
@@ -39,7 +39,7 @@ if (isset($_GET['message'])) {
     <input type="password" name="senha" id="senha" maxlength="11" />
         </fieldset></div>
         
-                <div id="Masculino"><fieldset> <legend>Novo Cadastro</legend>        
+                <div id="Servico"><fieldset> <legend>Novo Cadastro</legend>        
         <fieldset><legend>Dados Cadastrais</legend>
     <label for="nome">Nome</label>
     <input type="text" name="nome" id="nome" />
