@@ -12,6 +12,21 @@ include 'php/function.php';
         <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+        
+        <script type="text/javascript">
+$(document).ready(function(){
+        $("#tipoForm > div").hide();
+        $("#sel-servico").change(function(){
+                $("#tipoForm > div").hide();
+                $( '#'+$( this ).val() ).show('fast');
+        });
+        $("input[name='rd-servico']").click(function(){
+                $("#tipoForm > div").hide();
+                $( '#'+$( this ).val() ).show('fast');  
+        });
+});
+</script>
+        
     </head>
     <body>
 	<nav id="menu">
