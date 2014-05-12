@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_GET['message'])) {
     switch ($_GET['message']) {
         case 1:
@@ -13,75 +12,76 @@ if (isset($_GET['message'])) {
             break;
     }
 }
-
-?>
-      
-        
+?>      
 
 <div id="cadastro01">
-<form id="cadastro" action="php/process.php" class="cadastro" method="post">
-    
-    <fieldset id="situacao"><legend>Eu sou:</legend>
- <label><input type="radio" name="rd-servico" value="Paciente" />Paciente</label>
+
+
+    <fieldset class="cadastro">
+        <legend>Eu sou:</legend>
+        <label><input type="radio" name="rd-servico" value="Paciente" />Paciente</label>
         <label><input type="radio" name="rd-servico" value="Servico" />Servico</label>
-        </fieldset>
-    
-    
+    </fieldset>
+
+
     <div id="tipoForm">
-        
-                <div id="Paciente"> <fieldset> <legend>Novo Cadastro</legend>        
-        <fieldset><legend>Dados Cadastrais</legend>
-    <label for="nome">Nome</label>
-    <input type="text" name="nome" id="nome" />
-    <label for="email">E-mail</label>
-    <input type="email" name="email" id="email" />          
-    <label for="senha">Senha</label>
-    <input type="password" name="senha" id="senha" maxlength="11" />
-        </fieldset></div>
-        
-                <div id="Servico"><fieldset> <legend>Novo Cadastro</legend>        
-        <fieldset><legend>Dados Cadastrais</legend>
-    <label for="nome">Nome</label>
-    <input type="text" name="nome" id="nome" />
-    <label for="email">E-mail</label>
-    <input type="email" name="email" id="email" />          
-    <label for="senha">Senha</label>
-    <input type="password" name="senha" id="senha" maxlength="11" />
-        </fieldset>
-    
-    <fieldset><legend>Endereco</legend>
-    <label for="rua">Rua</label>
-    <input type="text" name="rua" id="rua" />	
-    <label for="Bairro">Bairro</label>
-    <input type="text" name="Bairro" id="Bairro" />	
-    </fieldset>
-    
-    <fieldset><legend>Servico</legend>
-         <label for="tipo">Tipo</label> 
-         <select>
-             <option>Hospital</option>
-             <option>Clinica</option>
-             <option>Posto de saude</option>
-             <option>Laboratorio</option>
-         </select>
-         <label for="servico">Servico</label> 
-         <select>
-             <option>Clinico geral</option>
-             <option>Ambulatorio</option>
-             <option>Cardiologia</option>
-             <option>Emergencia</option>
-             <option>Odontologia</option>
-             <option>Pediatria</option>
-         </select>
-    </fieldset></div>
-        </div>
-    
-    
-    
-    
-    
-    
-            <input type="submit" value="Salvar" />
-    </fieldset>
+        <div id="Paciente">
+        <form id="cadastro" action="php/process.php" class="cadastro" method="post">
+             <fieldset> <legend>Novo Cadastro</legend>        
+                    <fieldset>
+                        <legend>Dados Cadastrais</legend>
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" />
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" />          
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha" maxlength="11" />
+                        <input type="submit" value="Salvar" />
+                    </fieldset>
+            
+        </form>
+            </div>
+        <div id="Servico">
+        <form id="cadastro" action="php/processServico.php" class="cadastro" method="post">
+
+            
+                <fieldset> <legend>Novo Cadastro</legend>        
+                    <fieldset><legend>Dados Cadastrais</legend>
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" />
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" />          
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" id="senha" maxlength="11" />
+                    </fieldset>
+
+                    <fieldset><legend>Endereco</legend>
+                        <label for="rua">Rua</label>
+                        <input type="text" name="rua" id="rua" />	
+                        <label for="bairro">Bairro</label>
+                        <input type="text" name="bairro" id="bairro" />	
+                    </fieldset>
+
+                    <fieldset><legend>Servico</legend>
+                        <label for="servico">Servico</label> 
+                        Hospital<input type="radio" name="servico" value="hospital">
+                        Clinica<input type="radio" name="servico" value="clinica">
+                        <br/>
+                        
+                        <br/><label for="especialidade">Especialidade</label> 
+                            Clinico geral<input type="checkbox" name="especialidade" value="">
+                            Ambulatorio<input type="checkbox" name="especialidade" value="">
+                            Cardiologia<input type="checkbox" name="especialidade" value="">
+                            Emergencia<input type="checkbox" name="especialidade" value="">
+                            Odontologia<input type="checkbox" name="especialidade" value="">
+                            Pediatria<input type="checkbox" name="especialidade" value="">
+                          
+                        <input type="submit" value="Salvar" />
+                    </fieldset>
+        </form>
+            </div>
+    </div> 
+
+</fieldset>
 </form>
 </div>
