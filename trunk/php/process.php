@@ -9,9 +9,9 @@ $senha = isset($_POST['senha']) && $_POST['senha'] ? trim($_POST['senha']) : nul
 if ($nome && $email && $senha) {
     if (filter_var($email, FILTER_VALIDATE_EMAIL))
     $senha = md5($_POST['senha']);
-    $sql = (isset($_GET['idusuario']) && ($idusuario = $_GET['idusuario'])) 
-            ? "UPDATE usuario SET nome='$nome', email='$email', senha='$senha' WHERE idusuario = $idusuario" 
-            : "INSERT INTO usuario (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
+    $sql = (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) 
+            ? "UPDATE cadastro SET nome='$nome', email='$email', senha='$senha' WHERE idcadastro = $idcadastro" 
+            : "INSERT INTO cadastro (nome, email, senha) VALUES ('$nome', '$email', '$senha')";
 
     $result = mysql_query($sql, $dataBase);
 
