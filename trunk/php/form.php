@@ -68,13 +68,13 @@ if (isset($_GET['message'])) {
                         Clinica<input type="radio" name="servico" value="clinica">
                         <br/>
                         
-                        <br/><label for="especialidade">Especialidade</label> 
-                            Clinico geral<input type="checkbox" name="especialidade" value="">
-                            Ambulatorio<input type="checkbox" name="especialidade" value="">
-                            Cardiologia<input type="checkbox" name="especialidade" value="">
-                            Emergencia<input type="checkbox" name="especialidade" value="">
-                            Odontologia<input type="checkbox" name="especialidade" value="">
-                            Pediatria<input type="checkbox" name="especialidade" value="">
+                        <br/><label for="especializacao">especializacao</label> 
+                            Clinico geral<input type="checkbox" name="especializacao" value="">
+                            Ambulatorio<input type="checkbox" name="especializacao" value="">
+                            Cardiologia<input type="checkbox" name="especializacao" value="">
+                            Emergencia<input type="checkbox" name="especializacao" value="">
+                            Odontologia<input type="checkbox" name="especializacao" value="">
+                            Pediatria<input type="checkbox" name="especializacao" value="">
                           
                         <input type="submit" value="Salvar" />
                     </fieldset>
