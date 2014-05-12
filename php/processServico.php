@@ -15,7 +15,7 @@ if ($nome && $email && $senha && $rua && $bairro && $tipo && $especializacao) {
     $senha = md5($_POST['senha']);
     $sql = (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) 
             ? "UPDATE cadastro SET nome='$nome', email='$email', senha='$senha', rua=$rua, bairro=$bairro, servico=$servico, especializacao=$especializacao WHERE idcadastro = $idcadastro" 
-            : "INSERT INTO cadastro (nome, email, senha, rua, bairro, tipo, servico) VALUES ('$nome', '$email', '$senha', '$rua', '$bairro', '$servico', '$especializacao')";
+            : "INSERT INTO cadastro (nome, email, senha, rua, bairro, tipo, especializacao) VALUES ('$nome', '$email', '$senha', '$rua', '$bairro', '$servico', '$especializacao')";
 
     $result = mysql_query($sql, $dataBase);
 
