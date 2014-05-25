@@ -124,3 +124,10 @@ form.cadastro {
       padding-right: 10%;
       width: 400px;
   }
+  
+  div#busca {
+      float: right;
+      left: -50%;
+      height: 15%;
+      width: 15%;
+  }
