@@ -42,6 +42,13 @@ $(document).ready(function(){
 			
 			<?php endif; ?>
 			
+                        <?php if (taLogado()): ?>
+			<li>
+				<a href="index.php?pagina=busca" title="busca">Busca</a>
+			</li>
+			
+			<?php endif; ?>
+                        
 			<?php if (taLogado()): ?>
 			<li>
 				<a href="#" title="Opcoes do usuario" class="submenu"><?php echo $_SESSION['email'] ?></a>
