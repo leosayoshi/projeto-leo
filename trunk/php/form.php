@@ -59,7 +59,16 @@ if (isset($_GET['message'])) {
                         <label for="rua">Rua</label>
                         <input type="text" name="rua" id="rua" />	
                         <label for="bairro">Bairro</label>
-                        <input type="text" name="bairro" id="bairro" />	
+                        <select>
+                            <?php
+$sql = mysql_query("SELECT nome FROM bairro");
+while($nome = mysql_fetch_object($sql)){
+echo "<option value='$nome->nome'>
+	$nome->nome
+	</option>";
+}
+?>
+                        </select>
                     </fieldset>
 
                     <fieldset><legend>Servico</legend>
