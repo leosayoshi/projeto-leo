@@ -135,3 +135,7 @@ form.cadastro {
       width: 25%;
       background: white;
   }
+  fieldset.cadastro {
+      width: 15%;
+      float: right;
+  }
