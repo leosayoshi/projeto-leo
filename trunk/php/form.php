@@ -79,17 +79,23 @@ echo "<option value='$nome->nome'>
 
                     <fieldset><legend>Servico</legend>
                         <label for="servico">Servico</label> 
-                        Hospital<input type="radio" name="servico" value="hospital">
-                        Clinica<input type="radio" name="servico" value="clinica">
+                       <?php $sql = mysql_query("SELECT nome FROM servico");
+while($nome = mysql_fetch_object($sql)){
+echo "<option value='$nome->nome'>
+	$nome->nome
+	</option>";
+}
+?>
                         <br/>
                         
                         <br/><label for="especializacao">especializacao</label> 
-                            Clinico geral<input type="checkbox" name="especializacao" value="">
-                            Ambulatorio<input type="checkbox" name="especializacao" value="">
-                            Cardiologia<input type="checkbox" name="especializacao" value="">
-                            Emergencia<input type="checkbox" name="especializacao" value="">
-                            Odontologia<input type="checkbox" name="especializacao" value="">
-                            Pediatria<input type="checkbox" name="especializacao" value="">
+                            <?php $sql = mysql_query("SELECT nome FROM especializacao");
+while($nome = mysql_fetch_object($sql)){
+echo "<option value='$nome->nome'>
+	$nome->nome
+	</option>";
+}
+?>
                           
                         <input type="submit" value="Salvar" />
                     </fieldset>
