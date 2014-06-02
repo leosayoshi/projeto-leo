@@ -2,13 +2,19 @@
 if (isset($_GET['message'])) {
     switch ($_GET['message']) {
         case 1:
-            echo '<p>Todos os campos devem ser preenchidos!</p>';
+            echo '<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+		<strong>Alert:</strong> Todos os campos devem ser preenchidos!.</p></div>';
             break;
         case 2:
-            echo '<p>Ocorreu um problema ao salvar os dados. Por favor, tente novamente.</p>';
+            echo '<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+		<strong>Alert:</strong> Ocorreu um problema ao salvar os dados. Por favor, tente novamente.</p></div>';
             break;
         case 3:
-            echo '<p>salvo.</p>';
+            echo '<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding">
+		<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+		Todos os Salvo!</p></div>';
             break;
     }
 }
