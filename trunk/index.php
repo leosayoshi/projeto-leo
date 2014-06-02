@@ -42,7 +42,7 @@ $(document).ready(function(){
 			
 			<?php endif; ?>
 			
-                        <?php if (taLogado()): ?>
+                        <?php if (taLogado() &&$_SESSION['tipo']==1): ?>
 			<li>
 				<a href="index.php?pagina=busca" title="busca">Busca</a>
 			</li>
