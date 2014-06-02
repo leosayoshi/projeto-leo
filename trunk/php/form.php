@@ -14,7 +14,7 @@ if (isset($_GET['message'])) {
         case 3:
             echo '<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding">
 		<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
-		Todos os Salvo!</p></div>';
+		Cadastro feito com sucesso!</p></div>';
             break;
     }
 }
