@@ -42,7 +42,7 @@ $(document).ready(function(){
 			
 			<?php endif; ?>
 			
-                        <?php if (taLogado() &&$_SESSION['tipo']==1): ?>
+                        <?php if (taLogado() && $_SESSION['tipo']==1): ?>
 			<li>
 				<a href="index.php?pagina=busca" title="busca">Busca</a>
 			</li>
@@ -90,6 +90,12 @@ $(document).ready(function(){
 			switch ($_GET['pagina']) {
 				case 'lista':
 					if (taLogado())
+						include 'php/' . $_GET['pagina'] . '.php';
+					else 
+						include 'php/naopermitida.php'; 
+				break;
+				case 'busca':
+					if (taLogado() && $_SESSION['tipo']==1)
 						include 'php/' . $_GET['pagina'] . '.php';
 					else 
 						include 'php/naopermitida.php'; 
