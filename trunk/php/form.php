@@ -81,9 +81,8 @@ echo "<option value='$nome->nome'>
                         <label for="servico">Servico</label> 
                        <?php $sql = mysql_query("SELECT nome FROM servico");
 while($nome = mysql_fetch_object($sql)){
-echo "<option value='$nome->nome'>
-	$nome->nome
-	</option>";
+echo "<input type='radio' name='$nome->nome'  value='$idservico->nome'/>
+	$nome->nome";
 }
 ?>
                         <br/>
@@ -91,9 +90,8 @@ echo "<option value='$nome->nome'>
                         <br/><label for="especializacao">especializacao</label> 
                             <?php $sql = mysql_query("SELECT nome FROM especializacao");
 while($nome = mysql_fetch_object($sql)){
-echo "<option value='$nome->nome'>
-	$nome->nome
-	</option>";
+echo "<input type='checkbox' name='$nome->nome'  value='$idespecializacao->nome'/>
+	$nome->nome";
 }
 ?>
                           
