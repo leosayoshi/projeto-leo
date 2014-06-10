@@ -67,10 +67,10 @@ if (isset($_GET['message'])) {
                         <label for="bairro">Bairro</label>
                         <select>
                             <?php
-$sql = mysql_query("SELECT nome FROM bairro");
-while($nome = mysql_fetch_object($sql)){
-echo "<option value='$nome->nome'>
-	$nome->nome
+$sql = mysql_query("SELECT * FROM bairro");
+while($bairro = mysql_fetch_object($sql)){
+echo "<option value='$bairro->idbairro'>
+	$bairro->nome
 	</option>";
 }
 ?>
@@ -79,19 +79,19 @@ echo "<option value='$nome->nome'>
 
                     <fieldset><legend>Servico</legend>
                         <label for="servico">Servico</label> 
-                       <?php $sql = mysql_query("SELECT nome FROM servico");
-while($nome = mysql_fetch_object($sql)){
-echo "<input type='radio' name='$nome->nome'  value='$idservico->nome'/>
-	$nome->nome";
+                       <?php $sql = mysql_query("SELECT * FROM servico");
+while($servico = mysql_fetch_object($sql)){
+echo "<input type='radio' name='$servico->nome'  value='$servico->idservico'/>
+	$servico->nome";
 }
 ?>
                         <br/>
                         
                         <br/><label for="especializacao">especializacao</label> 
-                            <?php $sql = mysql_query("SELECT nome FROM especializacao");
-while($nome = mysql_fetch_object($sql)){
-echo "<input type='checkbox' name='$nome->nome'  value='$idespecializacao->nome'/>
-	$nome->nome";
+                            <?php $sql = mysql_query("SELECT * FROM especializacao");
+while($especializacao = mysql_fetch_object($sql)){
+echo "<input type='checkbox' name='$especializacao->nome'  value='$especializacao->idespecializacao'/>
+	$especializacao->nome";
 }
 ?>
                           
