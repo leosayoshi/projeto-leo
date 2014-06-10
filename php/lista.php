@@ -25,27 +25,27 @@ if (isset($_GET['message'])) {
 <table cellspacing="0" border="0">
 	<tr class="title">
 		<th>Nome</th>
-		<th>E-mail</th>
-		<th>Celular</th>
+		<th>Endereco</th>
+		<th>Bairro</th>
 		<th>Acoes</th>
 	</tr>
 	<?php
-	$sql = 'SELECT * FROM pessoa';
+	$sql = 'SELECT * FROM cadastro';
 	$result = mysql_query($sql, $dataBase);
 
 	if ($result && mysql_num_rows($result) > 0) {
 		while ($row = mysql_fetch_assoc($result)) {
 			echo '<tr>';
 			echo '<td>' . $row['nome'] . '</td>';
-			echo '<td>' . $row['email'] . '</td>';
-			echo '<td>' . $row['celular'] . '</td>';
+			echo '<td>' . $row['endereco'] . '</td>';
+			echo '<td>' . $row['bairro'] . '</td>';
 			echo '<td>'
-			. '<a href="index.php?pagina=form&idpessoa=' . $row['idpessoa'] . '">editar</a>'
-			. '  <a href="php/delete.php?idpessoa=' . $row['idpessoa'] . '">apagar</a>'
+			. '<a href="index.php?pagina=form&idcadastro=' . $row['idcadastro'] . '">editar</a>'
+			. '  <a href="php/delete.php?idcadastro=' . $row['idcadastro'] . '">apagar</a>'
 			. '</td>';
 			echo '</tr>';
 		}
 	} else
-		echo '<tr><td cols="4">Nao tem pessoas cadastradas.</td></tr>';
+		echo '<tr><td cols="4">Nao ha outros servicos cadastrados.</td></tr>';
 	?>
 </table>
