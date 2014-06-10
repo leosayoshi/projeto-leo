@@ -54,6 +54,9 @@ $(document).ready(function(){
 				<a href="#" title="Opcoes do usuario" class="submenu"><?php echo $_SESSION['email'] ?></a>
 				<ul>
 					<li>
+						<a href="index.php?pagina=form" title="Editar">Editar</a>
+					</li>
+					<li>
 						<a href="php/logout.php" title="Logar no site">Sair</a>
 					</li>
 				</ul>
