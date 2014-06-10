@@ -61,9 +61,9 @@ if (isset($_GET['message'])) {
                         <input type="password" name="senha" id="senha" maxlength="11" />
                     </fieldset>
 
-                    <fieldset><legend>Endereco</legend>
-                        <label for="rua">Rua</label>
-                        <input type="text" name="rua" id="rua" />	
+                    <fieldset><legend>Localizacao</legend>
+                        <label for="endereco">Endereco</label>
+                        <input type="text" name="endereco" id="endereco" />	
                         <label for="bairro">Bairro</label>
                         <select>
                             <?php
