@@ -16,6 +16,11 @@ if (isset($_GET['message'])) {
 		<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
 		Cadastro feito com sucesso!</p></div>';
             break;
+         case 4:
+            echo '<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+		<strong>Alert:</strong> O endereco de email ja esta cadastrado</p></div>';
+            break;
     }
 }
 ?>      
@@ -37,11 +42,11 @@ if (isset($_GET['message'])) {
                     <fieldset>
                         <legend>Dados Cadastrais</legend>
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome" id="nome" />
+                        <input type="text" name="nome" id="nome" placeholder="Digite seu nome" />
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" />          
+                        <input type="email" name="email" id="email" placeholder="Digite seu email" />          
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" id="senha" pattern="^.{6}$" type="password" title="A senha deve conter no mÃ­nimo 6 caracteres" required />
+                        <input type="password" name="senha" id="senha" placeholder="Digite sua senha" pattern="^.{6}$" type="password" title="A senha deve conter no mínimo 6 caracteres" required />
                         <label for="repetir_senha">Confirmar Senha</label>
 					<input id="repetir_senha" name="repetir_senha" type="password" required  placeholder="Repetir Senha" title="Repetir Senha" oninput="validaSenha(this)" />
                         <input type="submit" value="Salvar" />
@@ -56,11 +61,11 @@ if (isset($_GET['message'])) {
                 <fieldset> <legend>Novo Cadastro</legend>        
                     <fieldset><legend>Dados Cadastrais</legend>
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome" id="nome" />
+                        <input type="text" name="nome" id="nome" placeholder="Digite seu nome" />
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" />          
+                        <input type="email" name="email" id="email" placeholder="Digite seu email" />          
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" id="senha" pattern="^.{6}$" type="password" title="A senha deve conter no mÃ­nimo 6 caracteres" required />
+                        <input type="password" name="senha" id="senha" placeholder="Digite uma senha" pattern="^.{6}$" type="password" title="A senha deve conter no mínimo 6 caracteres" required />
                         <label for="repetir_senha">Confirmar Senha</label>
 					<input id="repetir_senha" name="repetir_senha" type="password" required  placeholder="Repetir Senha" title="Repetir Senha" oninput="validaSenha(this)" />
                     </fieldset>
