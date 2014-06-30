@@ -11,7 +11,7 @@ echo "<input type='radio' name='idservico' value='$servico->idservico'/>
 ?>
                         <br/>
                         </fieldset>
-                             <fieldset><legend> Especializacao</legend>
+                            <fieldset><legend> Especializacao</legend>
            <?php $sql = mysql_query("SELECT * FROM especializacao");
 while($especializacao = mysql_fetch_object($sql)){
 echo "<input type='checkbox' name='cadastroespecializacao[]'  value='$especializacao->idespecializacao'/>
