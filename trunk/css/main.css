@@ -126,14 +126,14 @@ form.cadastro {
   }
   
   div#busca {
-       background: url('../imagens/doctor-photo.jpg');
+       background: url('../imagens/busca.jpg');
       background-size: 100% 100%;
       box-shadow: 1px 1px 10px rgba(255,0,0,.5);
       height: 600px;
   }
  form#busca {
-      width: 25%;
-      background: white;
+      width: 35%;
+      background: rgba(255,255,255,.5);
   }
   fieldset.cadastro {
       width: 15%;
