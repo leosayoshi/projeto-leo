@@ -42,6 +42,8 @@ if (isset($_GET['message'])) {
                         <input type="email" name="email" id="email" />          
                         <label for="senha">Senha</label>
                         <input type="password" name="senha" id="senha" maxlength="11" />
+                        <label for="repetir_senha">Confirmar Senha</label>
+					<input id="repetir_senha" name="repetir_senha" type="password" required  placeholder="Repetir Senha" title="Repetir Senha" oninput="validaSenha(this)" />
                         <input type="submit" value="Salvar" />
                     </fieldset>
             
@@ -59,6 +61,8 @@ if (isset($_GET['message'])) {
                         <input type="email" name="email" id="email" />          
                         <label for="senha">Senha</label>
                         <input type="password" name="senha" id="senha" maxlength="11" />
+                        <label for="repetir_senha">Confirmar Senha</label>
+					<input id="repetir_senha" name="repetir_senha" type="password" required  placeholder="Repetir Senha" title="Repetir Senha" oninput="validaSenha(this)" />
                     </fieldset>
 
                     <fieldset><legend>Localizacao</legend>
