@@ -27,6 +27,16 @@ $(document).ready(function(){
 });
 </script>
         
+<script>
+function validaSenha (input){ 
+	if (input.value != document.getElementById('senha').value) {
+    input.setCustomValidity('Repita a senha corretamente');
+  } else {
+    input.setCustomValidity('');
+  }
+} 
+</script>
+
     </head>
     <body>
 	<nav id="menu">
