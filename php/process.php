@@ -12,7 +12,7 @@ if ($nome && $email && $senha) {
         $result = mysql_query($sql, $dataBase);
 
         if (mysql_num_rows($result) == 0) {
-            if (strlen($senha) >= 5) {
+            if (strlen($senha) >= 6) {
                 $senha = md5($_POST['senha']);
             } 
             $tipo = 1;
