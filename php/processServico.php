@@ -18,7 +18,9 @@ if ($nome && $email && $senha && $endereco && $idbairro && $idservico && $cadast
 
         if (mysql_num_rows($result) == 0) {
 
-            $senha = md5($_POST['senha']);
+            if (strlen($senha) >= 5) {
+                $senha = md5($_POST['senha']);
+            }
             $tipo = 2;
             $sql = (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) ? "UPDATE cadastro SET nome='$nome', endereco='$endereco', email='$email', senha='$senha' tipo='$tipo', idbairro='$idbairro', idservico='$idservico' WHERE idcadastro = $idcadastro" : "INSERT INTO cadastro (nome, endereco, email, senha, tipo, idbairro, idservico) VALUES ('$nome', '$endereco', '$email', '$senha', '$tipo', '$idbairro', '$idservico')";
 
@@ -39,8 +41,8 @@ if ($nome && $email && $senha && $endereco && $idbairro && $idservico && $cadast
                 exit;
             }
         } else {
-             header('Location: ../index.php?pagina=form&message=4');
-                exit;
+            header('Location: ../index.php?pagina=form&message=4');
+            exit;
         }
     } else {
         
