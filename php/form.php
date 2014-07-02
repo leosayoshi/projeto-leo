@@ -21,6 +21,11 @@ if (isset($_GET['message'])) {
 		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
 		<strong>Alert:</strong> O endereco de email ja esta cadastrado</p></div>';
             break;
+         case 5:
+            echo '<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+		<strong>Alert:</strong> A senha deve conter no minimo 6 caracteres</p></div>';
+            break;
     }
 }
 ?>      
