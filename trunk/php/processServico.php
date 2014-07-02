@@ -20,6 +20,9 @@ if ($nome && $email && $senha && $endereco && $idbairro && $idservico && $cadast
 
             if (strlen($senha) >= 6) {
                 $senha = md5($_POST['senha']);
+            } else {
+                 header('Location: ../index.php?pagina=form&message=5');
+            exit;
             }
             $tipo = 2;
             $sql = (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) ? "UPDATE cadastro SET nome='$nome', endereco='$endereco', email='$email', senha='$senha' tipo='$tipo', idbairro='$idbairro', idservico='$idservico' WHERE idcadastro = $idcadastro" : "INSERT INTO cadastro (nome, endereco, email, senha, tipo, idbairro, idservico) VALUES ('$nome', '$endereco', '$email', '$senha', '$tipo', '$idbairro', '$idservico')";
