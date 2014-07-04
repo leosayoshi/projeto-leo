@@ -2,14 +2,14 @@
 
 include 'connection.php';
 
-if (isset($_GET['idpessoa']) && ($idpessoa = $_GET['idpessoa'])) {
+if (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) {
 
-    $sql = "SELECT * FROM pessoa WHERE idpessoa = $idpessoa";
+    $sql = "SELECT * FROM cadastro WHERE idcadastro = $idcadastro";
     $result = mysql_query($sql, $dataBase);
      
     if (mysql_num_rows($result) == 1) {
 
-        $sql = "DELETE FROM pessoa WHERE idpessoa = $idpessoa";
+        $sql = "DELETE FROM cadastro WHERE idcadastro = $idcadastro";
         $result = mysql_query($sql, $dataBase);
 
         if ($result) {
