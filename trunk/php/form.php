@@ -42,7 +42,7 @@ if (isset($_GET['message'])) {
 
     <div id="tipoForm">
         <div id="Paciente">
-        <form id="cadastro" action="php/process.php" class="cadastro" method="post">
+        <form id="cadastro" action="php/process.php" class="cadastro" method="post" enctype="multipart/form-data">
              <fieldset> <legend>Novo Cadastro</legend>        
                     <fieldset>
                         <legend>Dados Cadastrais</legend>
@@ -60,10 +60,11 @@ if (isset($_GET['message'])) {
             
         </form>
             </div>
+        
+        
+        
         <div id="Servico">
-        <form id="cadastro" action="php/processServico.php" class="cadastro" method="post">
-
-            
+        <form id="cadastro" action="php/processServico.php" class="cadastro" method="post" enctype="multipart/form-data">            
                 <fieldset> <legend>Novo Cadastro</legend>        
                     <fieldset><legend>Dados Cadastrais</legend>
                         <label for="nome">Nome</label>
