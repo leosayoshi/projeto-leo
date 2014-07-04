@@ -56,6 +56,7 @@ if (isset($_GET['message'])) {
 					<input name="repetir_senha" type="password" required  placeholder="Repetir Senha" title="Repetir Senha" oninput="validaSenha(this)" />
                         <input type="submit" value="Salvar" />
                     </fieldset>
+                    </fieldset>
             
         </form>
             </div>
@@ -110,6 +111,7 @@ echo "<input type='checkbox' name='cadastroespecializacao[]'  value='$especializ
 ?>
                           
                         <input type="submit" value="Salvar" />
+                    </fieldset>
                     </fieldset>
         </form>
             </div>
