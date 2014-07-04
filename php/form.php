@@ -49,7 +49,8 @@ if (isset($_GET['message'])) {
                         <label for="nome">Nome</label>
                         <input type="text" name="nome" id="nome" placeholder="Digite seu nome" />
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" placeholder="Digite seu email" />          
+                        <input type="email" name="email" placeholder="Digite seu email" />    
+                        <input type="file" name="arquivo" id="txFoto" />
                         <label for="senha">Senha</label>
                         <input type="password" name="senha" placeholder="Digite sua senha" pattern="^.{6}$" type="password" title="A senha deve conter no minimo 6 caracteres" required />
                         <label for="repetir_senha">Confirmar Senha</label>
@@ -70,9 +71,11 @@ if (isset($_GET['message'])) {
                         <label for="nome">Nome</label>
                         <input type="text" name="nome"  placeholder="Digite seu nome" />
                         <label for="email">E-mail</label>
-                        <input type="email" name="email"  placeholder="Digite seu email" />          
+                        <input type="email" name="email"  placeholder="Digite seu email" /> 
+                        <input type="file" name="arquivo" id="txFoto" />
+
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha"  placeholder="Digite uma senha" pattern="^.{6}$" type="password" title="A senha deve conter no m�nimo 6 caracteres" required />
+                        <input type="password" name="senha"  placeholder="Digite uma senha" pattern="^.{6}$" type="password" title="A senha deve conter no minimo 6 caracteres" required />
                         <label for="repetir_senha">Confirmar Senha</label>
 					<input name="repetir_senha" type="password" required  placeholder="Repetir Senha" title="Repetir Senha" oninput="validaSenha2(this)" />
                     </fieldset>
