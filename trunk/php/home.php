@@ -11,7 +11,7 @@
 		<th>Bairro</th>
 	</tr>
     <?php
-    $sql = 'SELECT * FROM cadastro WHERE idcadastro=1';
+    $sql = 'SELECT * FROM cadastro WHERE idcadastro ORDER BY idcadastro DESC LIMIT 3';
 	$result = mysql_query($sql, $dataBase);
 
 	if ($result && mysql_num_rows($result) > 0) {
