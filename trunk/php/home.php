@@ -2,30 +2,17 @@
 <h4>Seja bem vindo!</h4>
 
 <p><?php echo date('d/m/Y') ?></p>
-<div id="propServ">
-    <table cellspacing="0" border="0">
-	<tr class="title">
-		<th>Nome do Servico</th>
-		<th>Tipo do servico</th>
-		<th>Endereco</th>
-		<th>Bairro</th>
-	</tr>
+
     <?php
     $sql = 'SELECT * FROM cadastro WHERE idcadastro ORDER BY idcadastro DESC LIMIT 3';
 	$result = mysql_query($sql, $dataBase);
 
 	if ($result && mysql_num_rows($result) > 0) {
 		while ($row = mysql_fetch_assoc($result)) {
-			echo '<tr>';
-			echo '<td>' . $row['nome'] . '</td>';
-			echo '<td>' . $row['idservico'] . '</td>';
-			echo '<td>' . $row['endereco'] . '</td>';
-			echo '<td>' . $row['idbairro'] . '</td>';
-			echo '</tr>';
+			echo '<div style="border: 2px solid blue; color: margin: 3px; padding: 2px; width: 30%;">'. ' Servico: '.$row['nome'] .' servico ' . $row['idservico'] .'<br/>'.' Especilzacao'.$row['especializacao'].'<br/>'.' Endereco '.' '. $row['endereco'] . '<br/>'.' Bairro '. $row['idbairro'] .'</div>'.'<br/>';
+
 		}
 	} else
 		echo '<tr><td cols="4">Nao tem pessoas cadastradas.</td></tr>';
-	?>
-    </table>
-</div>
+	?>  
 </div>
