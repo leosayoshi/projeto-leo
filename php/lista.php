@@ -25,8 +25,9 @@ if (isset($_GET['message'])) {
 <table cellspacing="0" border="0">
 	<tr class="title">
 		<th>Nome</th>
-		<th>Endereco</th>
-		<th>Bairro</th>
+		<th>Email</th>
+		<th>Endereco</th>  
+		<th>Bairro</th>  
 		<th>Acoes</th>
 	</tr>
 	<?php
@@ -37,6 +38,7 @@ if (isset($_GET['message'])) {
 		while ($row = mysql_fetch_assoc($result)) {
 			echo '<tr>';
 			echo '<td>' . $row['nome'] . '</td>';
+			echo '<td>' . $row['email'] . '</td>';
 			echo '<td>' . $row['endereco'] . '</td>';
 			echo '<td>' . $row['bairro'] . '</td>';
 			echo '<td>'
