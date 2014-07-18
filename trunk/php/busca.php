@@ -1,5 +1,22 @@
+<?php
+if (isset($_GET['message'])) {
+    switch ($_GET['message']) {
+        case 1:
+            echo  '<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding">
+		<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+		RESULTADOS DA BUSCA:</p></div>';
+            break;
+        case 2:
+            echo '<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+		<strong>Alert:</strong> OS CRITERIOS DE BUSCA NAO TIVERAM RESULTADOS!</p></div>';
+            break;
+
+    }
+}
+?>    
 <div id="busca">
-    <form id="busca">
+    <form id="busca" method="GET" action="php/processbusca.php">
     <fieldset id="busca">Busca
         <fieldset>
                         <label for="servico">Servico</label> 
