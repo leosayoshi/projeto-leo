@@ -1,3 +1,4 @@
+<div id="cadastro01">
 <?php
 if (isset($_GET['message'])) {
     switch ($_GET['message']) {
@@ -29,9 +30,6 @@ if (isset($_GET['message'])) {
     }
 }
 ?>      
-
-<div id="cadastro01">
-
 
     <fieldset class="cadastro">
         <legend>Eu sou:</legend>
