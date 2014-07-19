@@ -25,7 +25,7 @@ if (isset($_GET['message'])) {
 	 <th>Acoes</th>
     </tr>
     <?php
-    $sql = 'SELECT * FROM cadastro';
+    $sql = 'SELECT * FROM cadastro WHERE idcadastro="'.$_SESSION['email'].'"';
     $result = mysql_query($sql, $dataBase);
 
     if ($result && mysql_num_rows($result) > 0) {
