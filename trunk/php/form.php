@@ -30,7 +30,12 @@ if (isset($_GET['message'])) {
     }
 }
 ?>      
-
+    
+<?php if(isset($idcadastro)): ?>
+<h1>Edicao de cadastro<?php echo $nome ?></h1>
+<?php else: ?>
+<h1>Cadastro</h1>
+<?php endif; ?>
     <fieldset class="cadastro">
         <legend>Eu sou:</legend>
         <label><input type="radio" name="rd-servico" value="Paciente" />Paciente</label>
@@ -40,14 +45,14 @@ if (isset($_GET['message'])) {
 
     <div id="tipoForm">
         <div id="Paciente">
-        <form id="cadastro" action="php/process.php" class="cadastro" method="post" enctype="multipart/form-data">
+        <form id="cadastro" action="php/process.php<?php echo isset($idcadastro) ? '?idcadastro=' . $idcadastro : '' ?>" class="cadastro" method="post" enctype="multipart/form-data">
              <fieldset> <legend>Novo Cadastro</legend>        
                     <fieldset>
                         <legend>Dados Cadastrais</legend>
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome" id="nome" placeholder="Digite seu nome" />
+                        <input type="text" name="nome" id="nome" placeholder="Digite seu nome" value="<?php echo isset($nome) ? $nome : '' ?>" />
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" placeholder="Digite seu email" />    
+                        <input type="email" name="email" placeholder="Digite seu email" value="<?php echo isset($email) ? $email : '' ?>"/>    
                         <input type="file" name="arquivo" id="txFoto" />
                         <label for="senha">Senha</label>
                         <input type="password" name="senha" placeholder="Digite sua senha" pattern="^.{6}$" type="password" title="A senha deve conter no minimo 6 caracteres" required />
@@ -63,13 +68,13 @@ if (isset($_GET['message'])) {
         
         
         <div id="Servico">
-        <form id="cadastro" action="php/processServico.php" class="cadastro" method="post" enctype="multipart/form-data">            
+        <form id="cadastro" action="php/processServico.php<?php echo isset($idcadastro) ? '?idcadastro=' . $idcadastro : '' ?>" class="cadastro" method="post" enctype="multipart/form-data">            
                 <fieldset> <legend>Novo Cadastro</legend>        
                     <fieldset><legend>Dados Cadastrais</legend>
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome"  placeholder="Digite seu nome" />
+                        <input type="text" name="nome"  placeholder="Digite seu nome" value="<?php echo isset($nome) ? $nome : '' ?>" />
                         <label for="email">E-mail</label>
-                        <input type="email" name="email"  placeholder="Digite seu email" /> 
+                        <input type="email" name="email"  placeholder="Digite seu email" value="<?php echo isset($email) ? $email : '' ?>" /> 
                         <input type="file" name="arquivo" id="txFoto" />
 
                         <label for="senha">Senha</label>
@@ -80,7 +85,7 @@ if (isset($_GET['message'])) {
 
                     <fieldset><legend>Localizacao</legend>
                         <label for="endereco">Endereco</label>
-                        <input type="text" name="endereco" />	
+                        <input type="text" name="endereco" value="<?php echo isset($endereco) ? $endereco : '' ?>" />	
                         <label for="bairro">Bairro</label>
                         <select name="idbairro" >
                             <?php

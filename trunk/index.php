@@ -53,7 +53,7 @@ function validaSenha2 (input){
 				<a href="index.php">Home</a>
 			</li>
 
-			<?php if (taLogado()): ?>
+			<?php if (taLogado() && $_SESSION['tipo']==3): ?>
 			<li>
 				<a href="index.php?pagina=lista" title="Pessoas cadastradas">Pessoas cadastradas</a>
 			</li>
@@ -72,7 +72,7 @@ function validaSenha2 (input){
 				<a href="#" title="Opcoes do usuario" class="submenu"><?php echo $_SESSION['email'] ?></a>
 				<ul>
 					<li>
-						<a href="index.php?pagina=form" title="Editar">Editar</a>
+						<a href="index.php?pagina=edita" title="Editar">Editar</a>
 					</li>
 					<li>
 						<a href="php/logout.php" title="Logar no site">Sair</a>
