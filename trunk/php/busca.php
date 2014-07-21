@@ -17,7 +17,7 @@ if (isset($_GET['message'])) {
     }
 }
 ?>  
-    <form id="busca" method="GET" action="php/processbusca.php">
+    <form id="busca" method="post" action="php/processbusca.php">
     <fieldset id="busca">Busca
         <fieldset>
                         <label for="servico">Servico</label> 
