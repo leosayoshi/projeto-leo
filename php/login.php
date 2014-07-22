@@ -14,7 +14,6 @@ if ($email && $senha) {
 		$_SESSION['email'] = $row['email'];
 		$_SESSION['tipo'] = $row['tipo'];
 		$_SESSION['idcadastro'] = $row['idcadastro'];
-		$_SESSION['tipo'] = $row['tipo'];
 				
 		if (isset($_POST['manterLogado']) && $_POST['manterLogado'] == '1') {
 			setcookie('manterLogado', 1, time()+60*60, '/trunk/');
