@@ -4,11 +4,10 @@ include 'connection.php';
 $nome = $_POST['nome'];
 $senha = $_POST['senha'];
 $endereco = $_POST['endereco'];
-$idbairro = $_POST['idbairro'];
 
 
 
-if ($nome || $senha || $endereco || $idbairro) {
+if ($nome || $senha || $endereco ) {
   
         
         $result = mysql_query($sql, $dataBase);{
@@ -21,7 +20,7 @@ if ($nome || $senha || $endereco || $idbairro) {
             exit;
             }
             $tipo = 2;
-        $sql = (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) ? "UPDATE cadastro SET nome='$nome', senha='$senha', tipo='$tipo' idbairro='$idbairro', endereco='$endereco' WHERE idcadastro = $idcadastro" : "INSERT INTO cadastro (nome, senha, tipo, idbairro, endereco) VALUES ('$nome', '$senha', '$tipo','$idbairro','$endereco')";
+        $sql = (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) ? "UPDATE cadastro SET nome='$nome', senha='$senha', tipo='$tipo', endereco='$endereco' WHERE idcadastro = $idcadastro" : "INSERT INTO cadastro (nome, senha, tipo, endereco) VALUES ('$nome', '$senha', '$tipo','$endereco')";
 
         $result = mysql_query($sql, $dataBase);
 

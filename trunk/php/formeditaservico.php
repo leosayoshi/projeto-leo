@@ -39,7 +39,6 @@ if (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) {
         $email = $row['email'];
         $senha = $row['senha'];
         $endereco = $row['endereco'];
-        $idbairro = $row['idbairro'];
     }
 }
 ?>      
@@ -65,24 +64,11 @@ if (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) {
 
                     <fieldset><legend>Localizacao</legend>
                         <label for="endereco">Endereco</label>
-                        <input type="text" name="endereco" value="<?php echo isset($endereco) ? $endereco : '' ?>" />	
-                        <label for="bairro">Bairro</label>
-                        <select name="idbairro" >
-                            <?php
-$sql = mysql_query("SELECT * FROM bairro");
-while($bairro = mysql_fetch_object($sql)){
-echo "<option value='$bairro->idbairro'>
-	$bairro->nome
-	</option>";
-}
-?>
-                        </select>
+                        <input type="text" name="endereco" value="<?php echo isset($endereco) ? $endereco : '' ?>" />	                      
                     </fieldset>
-
-                    <fieldset>
                           
                         <input type="submit" value="Salvar" />
-                    </fieldset>
+                    
                     </fieldset>
         </form>
            </div>
