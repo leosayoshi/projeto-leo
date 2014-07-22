@@ -12,6 +12,7 @@ include 'php/function.php';
         <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         
         <script type="text/javascript">
 $(document).ready(function(){
