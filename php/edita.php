@@ -22,10 +22,11 @@ if (isset($_GET['message'])) {
     <tr class="title">
         <th>Nome</th>
         <th>Email</th>
-	 <th>Acoes</th>
+	 <th>Tipo</th>
+	 <th>Ações</th>
     </tr>
     <?php
-    $sql = 'SELECT * FROM cadastro WHERE idcadastro="'.$_SESSION['idcadastro'].'"';
+    $sql = 'SELECT * FROM cadastro WHERE idcadastro="'.$_SESSION['idcadastro'].'"AND"'.$_SESSION['tipo'].'"';
     $result = mysql_query($sql, $dataBase);
 
     if ($result && mysql_num_rows($result) > 0) {
@@ -33,13 +34,22 @@ if (isset($_GET['message'])) {
             echo '<tr>';
             echo '<td>' . $row['nome'] . '</td>';
             echo '<td>' . $row['email'] . '</td>';
+            echo '<td>' . $row['tipo'] . '</td>';
+            if ($_SESSION['tipo']==1){
             echo '<td>'
-            . '<a href="index.php?pagina=form&idcadastro=' . $row['idcadastro'] . '">editar</a>'
-            . '  <a href="php/delete.php?idcadastro=' . $row['idcadastro'] . '">apagar</a>'
+            . '<a href="index.php?pagina=formeditapaciente&idcadastro=' . $row['idcadastro'] . '">edição</a>'
+            . '  <a href="php/delete.php?idcadastro=' . $row['idcadastro'] . '">deletar cadastro</a>'
             . '</td>';
             echo '</tr>';
+            } if ($_SESSION['tipo']==2){
+            echo '<td>'
+            . '<a href="index.php?pagina=formeditaservico&idcadastro=' . $row['idcadastro'] . '">edição</a>'
+            . '  <a href="php/delete.php?idcadastro=' . $row['idcadastro'] . '">deletar cadastro</a>'
+            . '</td>';
+            echo '</tr>';
+            }
         }
     } else
-        echo '<tr><td cols="4">Nao ha pessoas cadastradas.</td></tr>';
+        echo '<tr><td cols="4">Nao ha dados cadastrados.</td></tr>';
     ?>
 </table>
