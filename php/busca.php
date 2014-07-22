@@ -9,7 +9,7 @@ if (isset($_GET['message'])) {
 		RESULTADOS DA BUSCA:</p></div>';
             break;
         case 2:
-            echo 'echo <div id="busca"><div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+            echo '<div id="busca"><div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
 		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
 		<strong>Alert:</strong> OS CRITERIOS DE BUSCA NAO TIVERAM RESULTADOS!</p></div>';
             break;
@@ -17,40 +17,65 @@ if (isset($_GET['message'])) {
     }
 }
 ?>  
-    <form id="busca" method="post" action="php/processbusca.php">
+    <form id="busca" name="busca" method="post" action="">
     <fieldset id="busca">Busca
         <fieldset>
-                        <label for="servico">Servico</label> 
+                        <label for="servico">Servico</label> <select name="servico">
                        <?php $sql = mysql_query("SELECT * FROM servico");
 while($servico = mysql_fetch_object($sql)){
-echo "<input type='radio' name='idservico' value='$servico->idservico'/>
-	$servico->nome";
+echo "<option value='$servico->idservico'/>
+	$servico->nome
+        </option>";
 }
-?>
+?></select>
                         <br/>
                         </fieldset>
-                            <fieldset><legend> Especializacao</legend>
-           <?php $sql = mysql_query("SELECT * FROM especializacao");
-while($especializacao = mysql_fetch_object($sql)){
-echo "<input type='checkbox' name='cadastroespecializacao[]'  value='$especializacao->idespecializacao'/>
-	$especializacao->nome";
-}
-?>
-        <br/>
-                        </fieldset>
+                         
                         <fieldset>
           <legend>Bairro</legend>
-            <select> <?php
+            <select name="bairro"> <?php
 $sql = mysql_query("SELECT nome FROM bairro");
 while($nome = mysql_fetch_object($sql)){
 echo "<option value='$nome->nome'>
 	$nome->nome
 	</option>";
 }
-?></select>
+?></select> 
+          <input type="hidden" name="acao" value="enviar">
             <input type="submit" value="buscar">
     </fieldset>
     </fieldset>
     </form>
     
+ <?php
+    if(isset($_POST['acao']) && $_POST['acao'] == 'enviar') {
+        $servico = $_POST['servico'];
+        $bairro = $_POST['bairro'];
+        
+         //$sql = mysql_query("SELECT * cadastro WHERE servico = '$servico' AND bairro = '$bairro'");
+        
+         $sql = 'SELECT c.*, b.nome as nomeBairro, s.nome as nomeServico
+	FROM cadastro c
+	JOIN bairro b ON c.idbairro = b.idbairro
+	JOIN servico s ON c.idservico = s.idservico
+	ORDER BY nomeBairro';
+        
+        $result = mysql_query($sql, $dataBase);
+ if ($result && mysql_num_rows($result) > 0) {
+    while ($row = mysql_fetch_assoc($result)) {
+        echo '<br/>';
+        echo '<div style="border: 2px solid black; margin-left:30%; background: rgba(255,255,255,.9); color: margin: 3px; padding: 2px; width: 30%;">';
+        echo ' Nome: ' . $row['nome'] . '<br/>';
+        echo ' Servico: ' . $row['nomeServico'] . '<br/>';
+        echo ' Endereco ' . $row['endereco'] . '<br/>';
+        echo ' Bairro ' . $row['nomeBairro'] . '<br/>';
+        echo '</div>' . '<br/>';
+    }
+} else {
+    echo '<tr><td cols="4">Nao tem pessoas cadastradas.</td></tr>';
+}       
+    }
+ 
+ ?>  
+   
 </div>
