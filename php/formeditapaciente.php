@@ -29,6 +29,17 @@ if (isset($_GET['message'])) {
             break;
     }
 }
+if (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) {
+    $sql = "SELECT * FROM cadastro WHERE idcadastro = $idcadastro";
+    $result = mysql_query($sql, $dataBase);
+    
+    if (mysql_num_rows($result) == 1) {
+        $row = mysql_fetch_assoc($result);
+        $nome = $row['nome'];
+        $email = $row['email'];
+        $senha = $row['senha'];
+    }
+}
 ?>      
     
 <?php if(isset($idcadastro)): ?>
@@ -46,9 +57,9 @@ if (isset($_GET['message'])) {
                         <input type="email" name="email" placeholder="Digite seu email" value="<?php echo isset($email) ? $email : '' ?>"/>    
                         <input type="file" name="arquivo" id="txFoto" />
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" placeholder="Digite sua senha" pattern="^.{6}$" type="password" title="A senha deve conter no minimo 6 caracteres" required />
+                        <input type="password" name="senha" placeholder="Digite sua senha" pattern="^.{6}$" type="password" title="A senha deve conter no minimo 6 caracteres" />
                         <label for="repetir_senha">Confirmar Senha</label>
-					<input name="repetir_senha" type="password" required  placeholder="Repetir Senha" title="Repetir Senha" oninput="validaSenha(this)" />
+					<input name="repetir_senha" type="password"  placeholder="Repetir Senha" title="Repetir Senha" oninput="validaSenha(this)" />
                         <input type="submit" value="Salvar" />
                     </fieldset>
                     </fieldset>
