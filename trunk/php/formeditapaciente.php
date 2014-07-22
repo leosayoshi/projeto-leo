@@ -43,7 +43,7 @@ if (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) {
 ?>      
     
 <?php if(isset($idcadastro)): ?>
-<h1>Edicao de cadastro<?php echo $nome ?></h1>
+<h1>Edicao de cadastro <?php echo $nome ?></h1>
 <?php else: ?>
 <h1>Cadastro</h1>
 <?php endif; ?>
