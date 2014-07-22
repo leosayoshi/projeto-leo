@@ -45,18 +45,17 @@ if (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) {
 ?>      
     
 <?php if(isset($idcadastro)): ?>
-<h1>Edicao de cadastro<?php echo $nome ?></h1>
+<h1>Edicao de cadastro: <?php echo $nome ?></h1>
 <?php else: ?>
 <h1>Cadastro</h1>
 <?php endif; ?>
-        <form id="cadastro" action="php/processServico.php<?php echo isset($idcadastro) ? '?idcadastro=' . $idcadastro : '' ?>" class="cadastro" method="post" enctype="multipart/form-data">            
+        <form id="cadastro" action="php/processeditaservico.php<?php echo isset($idcadastro) ? '?idcadastro=' . $idcadastro : '' ?>" class="cadastro" method="post" enctype="multipart/form-data">            
                 <fieldset> <legend>Novo Cadastro</legend>        
                     <fieldset><legend>Dados Cadastrais</legend>
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome"  placeholder="Digite seu nome" value="<?php echo isset($nome) ? $nome : '' ?>" />
-                        <label for="email">E-mail</label>
-                        <input type="email" name="email"  placeholder="Digite seu email" value="<?php echo isset($email) ? $email : '' ?>" /> 
-                        <input type="file" name="arquivo" id="txFoto" />
+                        <input type="text" name="nome"  placeholder="Digite seu nome" value="<?php echo isset($nome) ? $nome : '' ?>" />                    
+                   <label for="email">E-mail</label>
+                        <input type="email" name="email" placeholder="Digite seu email" value="<?php echo isset($email) ? $email : '' ?>"/> 
 
                         <label for="senha">Senha</label>
                         <input type="password" name="senha"  placeholder="Digite uma senha" pattern="^.{6}$" type="password" title="A senha deve conter no minimo 6 caracteres" />
@@ -80,23 +79,7 @@ echo "<option value='$bairro->idbairro'>
                         </select>
                     </fieldset>
 
-                    <fieldset><legend>Servico</legend>
-                        <label for="servico">Servico</label> 
-                       <?php $sql = mysql_query("SELECT * FROM servico");
-while($servico = mysql_fetch_object($sql)){
-echo "<input type='radio' name='idservico' value='$servico->idservico'/>
-	$servico->nome";
-}
-?>
-                        <br/>
-                        
-                        <br/><label for="especializacao">Especializacao</label> 
-                            <?php $sql = mysql_query("SELECT * FROM especializacao");
-while($especializacao = mysql_fetch_object($sql)){
-echo "<input type='checkbox' name='cadastroespecializacao[]'  value='$especializacao->idespecializacao'/>
-	$especializacao->nome";
-}
-?>
+                    <fieldset>
                           
                         <input type="submit" value="Salvar" />
                     </fieldset>

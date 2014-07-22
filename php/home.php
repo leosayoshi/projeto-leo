@@ -2,6 +2,43 @@
     <h4 style="margin-left: 40%;">Seja bem vindo!</h4>
 
 <p style="margin-left: 40%;"><?php echo date('d/m/Y') ?></p>
+<?php
+if (isset($_GET['message'])) {
+    switch ($_GET['message']) {
+        case 1:
+            echo '<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+		<strong>Alert:</strong> Todos os campos devem ser preenchidos!.</p></div>';
+            echo '<br/>';
+            break;
+        case 2:
+            echo '<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+		<strong>Alert:</strong> Ocorreu um problema ao salvar os dados. Por favor, tente novamente.</p></div>';
+            echo '<br/>';
+            break;
+        case 3:
+            echo '<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding">
+		<span class="ui-icon ui-icon-info" style="float: left; margin-right: .3em;"></span>
+		Cadastro feito com sucesso!</p></div>';
+            echo '<br/>';
+            break;
+         case 4:
+            echo '<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+		<strong>Alert:</strong> O endereco de email ja esta cadastrado</p></div>';
+            echo '<br/>';
+             break;
+         case 5:
+            echo '<div class="ui-state-error ui-corner-all" style="padding: 0 .7em;">
+		<p><span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+		<strong>Alert:</strong> A senha deve conter no minimo 6 caracteres</p></div>';
+            echo '<br/>';
+             break;
+    }
+}
+?>
+
 
     <?php
     $sql = 'SELECT c.*, b.nome as nomeBairro, s.nome as nomeServico

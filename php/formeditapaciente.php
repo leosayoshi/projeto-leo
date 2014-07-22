@@ -43,18 +43,18 @@ if (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) {
 ?>      
     
 <?php if(isset($idcadastro)): ?>
-<h1>Edicao de cadastro <?php echo $nome ?></h1>
+<h1>Edicao de cadastro: <?php echo $nome ?></h1>
 <?php else: ?>
 <h1>Cadastro</h1>
 <?php endif; ?>
-        <form id="cadastro" action="php/process.php<?php echo isset($idcadastro) ? '?idcadastro=' . $idcadastro : '' ?>" class="cadastro" method="post" enctype="multipart/form-data">
+        <form id="cadastro" action="php/processeditapaciente.php<?php echo isset($idcadastro) ? '?idcadastro=' . $idcadastro : '' ?>" class="cadastro" method="post" enctype="multipart/form-data">
              <fieldset> <legend>Editar Cadastro</legend>        
                     <fieldset>
                         <legend>Dados Cadastrais</legend>
                         <label for="nome">Nome</label>
                         <input type="text" name="nome" id="nome" placeholder="Digite seu nome" value="<?php echo isset($nome) ? $nome : '' ?>" />
                         <label for="email">E-mail</label>
-                        <input type="email" name="email" placeholder="Digite seu email" value="<?php echo isset($email) ? $email : '' ?>"/>    
+                        <input type="email" name="email" placeholder="Digite seu email" value="<?php echo isset($email) ? $email : '' ?>"/> 
                         <input type="file" name="arquivo" id="txFoto" />
                         <label for="senha">Senha</label>
                         <input type="password" name="senha" placeholder="Digite sua senha" pattern="^.{6}$" type="password" title="A senha deve conter no minimo 6 caracteres" />
