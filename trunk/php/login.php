@@ -13,6 +13,7 @@ if ($email && $senha) {
 		$row = mysql_fetch_assoc($result);
 		$_SESSION['email'] = $row['email'];
 		$_SESSION['tipo'] = $row['tipo'];
+		$_SESSION['idcadastro'] = $row['idcadastro'];
 				
 		if (isset($_POST['manterLogado']) && $_POST['manterLogado'] == '1') {
 			setcookie('manterLogado', 1, time()+60*60, '/trunk/');
