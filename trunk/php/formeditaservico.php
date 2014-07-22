@@ -39,7 +39,7 @@ if (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) {
         $email = $row['email'];
         $senha = $row['senha'];
         $endereco = $row['endereco'];
-        $bairro = $row['bairro'];
+        $idbairro = $row['idbairro'];
     }
 }
 ?>      
