@@ -1,6 +1,6 @@
 <?php
 
-$dataBase = mysql_connect('localhost', 'root', 'kyosetsu');
+$dataBase = mysql_connect('localhost', 'root', '');
 $base = mysql_select_db('buscamedica');
 
 if (!$dataBase && !$base) 
