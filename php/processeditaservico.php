@@ -2,18 +2,18 @@
 include 'connection.php';
 
 $nome = $_POST['nome'];
-$senha = $_POST['senha'];
+$senha = isset($_POST['senha']) && $_POST['senha'] ? trim($_POST['senha']) : null;
 $endereco = $_POST['endereco'];
 
 
 
-if ($nome || $senha || $endereco ) {
+if ($nome || $endereco && $senha ) {
   
         
         $result = mysql_query($sql, $dataBase);{
 
         if (mysql_num_rows($result) == 0) {
-            if (strlen($senha) > 6) {
+            if (strlen($senha) >= 6) {
                 $senha = md5($_POST['senha']);
             } else {
                  header('Location: ../index.php?pagina=formeditaservico&message=5');
