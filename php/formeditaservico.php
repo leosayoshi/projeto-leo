@@ -54,8 +54,10 @@ if (isset($_GET['idcadastro']) && ($idcadastro = $_GET['idcadastro'])) {
                         <label for="nome">Nome</label>
                         <input type="text" name="nome"  placeholder="Digite seu nome" value="<?php echo isset($nome) ? $nome : '' ?>" />                    
                    <label for="email">E-mail</label>
-                        <input type="email" name="email" placeholder="Digite seu email" value="<?php echo isset($email) ? $email : '' ?>"/> 
-
+                        <input type="email" name="email" disabled placeholder="Digite seu email" value="<?php echo isset($email) ? $email : '' ?>  "/> 
+<fieldset><legend>Senha</legend>
+                       	<p style="color:red;font-weight:bold;">*Digite e confirme com sua senha atual, ou digite uma nova senha</p>
+						
                         <label for="senha">Senha</label>
                         <input type="password" name="senha"  placeholder="Digite uma senha" pattern="^.{6}$" type="password" title="A senha deve conter no minimo 6 caracteres" />
                         <label for="repetir_senha">Confirmar Senha</label>
