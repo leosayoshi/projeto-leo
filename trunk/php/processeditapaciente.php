@@ -2,10 +2,10 @@
 include 'connection.php';
 
 $nome = $_POST['nome'];
-$senha = $_POST['senha'];
+$senha = isset($_POST['senha']) && $_POST['senha'] ? trim($_POST['senha']) : null;
 
 
-if ($nome || $senha) {
+if ($nome && $senha) {
   
         
         $result = mysql_query($sql, $dataBase);{
