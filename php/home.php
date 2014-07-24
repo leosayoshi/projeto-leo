@@ -55,7 +55,6 @@ if (isset($_GET['message'])) {
         echo '<div style="border: 2px solid black; margin-left:30%; background: rgba(255,255,255,.9); color: margin: 3px; padding: 2px; width: 30%;">';
         echo ' Nome: ' . $row['nome'] . '<br/>';
         echo ' Servico: ' . $row['nomeServico'] . '<br/>';
-        echo ' Especializacao: ' . '<br/>';
         echo ' Endereco ' . $row['endereco'] . '<br/>';
         echo ' Bairro ' . $row['nomeBairro'] . '<br/>';
         echo '</div>' . '<br/>';
