@@ -11,7 +11,7 @@ if ($nome || $senha) {
         $result = mysql_query($sql, $dataBase);{
 
         if (mysql_num_rows($result) == 0) {
-            if (strlen($senha) >= 0 || 6) {
+            if (strlen($senha) > 6) {
                 $senha = md5($_POST['senha']);
             } else {
                  header('Location: ../index.php?pagina=formeditapaciente&message=5');
