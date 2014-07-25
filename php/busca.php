@@ -54,11 +54,17 @@ echo "<option value='$nome->nome'>
         
          //$sql = mysql_query("SELECT * cadastro WHERE servico = '$servico' AND bairro = '$bairro'");
         
-         $sql = 'SELECT c.*, b.nome as nomeBairro, s.nome as nomeServico
-	FROM cadastro c
-	JOIN bairro b ON c.idbairro = b.idbairro
-	JOIN servico s ON c.idservico = s.idservico
-	ORDER BY nomeBairro';
+         $sql = 'SELECT c.nome, c.endereco, e.nome, b.nome, s.nome
+FROM `buscamedica`.`cadastro` as c, 
+`buscamedica`.`cadastroespecializacao` as ce, 
+`buscamedica`.`bairro` as b,
+`buscamedica`.`servico` as s,
+`buscamedica`.`especializacao` as e
+WHERE c.idcadastro=ce.idcadastro
+AND ce.idespecializacao=e.idespecializacao
+AND c.idbairro=b.idbairro
+AND c.idservico=s.idservico
+AND b.bairro LIKE $bairro';
         
         $result = mysql_query($sql, $dataBase);
  if ($result && mysql_num_rows($result) > 0) {
@@ -67,6 +73,7 @@ echo "<option value='$nome->nome'>
         echo '<div style="border: 2px solid black; margin-left:30%; background: rgba(255,255,255,.9); color: margin: 3px; padding: 2px; width: 30%;">';
         echo ' Nome: ' . $row['nome'] . '<br/>';
         echo ' Servico: ' . $row['nomeServico'] . '<br/>';
+        echo ' Especializacao: ' . $row['nomeEspecializacao'] . '<br/>';
         echo ' Endereco ' . $row['endereco'] . '<br/>';
         echo ' Bairro ' . $row['nomeBairro'] . '<br/>';
         echo '</div>' . '<br/>';
