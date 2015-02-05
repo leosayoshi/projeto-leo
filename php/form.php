@@ -50,7 +50,7 @@ if (isset($_GET['message'])) {
                     <fieldset>
                         <legend>Dados Cadastrais</legend>
                         <label for="nome">Nome</label>
-                        <input type="text" name="nome" id="nome" placeholder="Digite seu nome" value="<?php echo isset($nome) ? $nome : '' ?>" />
+                        <input type="text" name="nome" placeholder="Digite seu nome" value="<?php echo isset($nome) ? $nome : '' ?>" />
                         <label for="email">E-mail</label>
                         <input type="email" name="email" placeholder="Digite seu email" value="<?php echo isset($email) ? $email : '' ?>"/>    
                         <input type="file" name="arquivo" id="txFoto" />
